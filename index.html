@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hype Man — Stoic Command Center</title>
+    <meta
+      name="description"
+      content="Stoic productivity hub with affirmations, strategy quotes, life advice, and daily execution tracking."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hero">
+        <p class="eyebrow">STOIC COMMAND CENTER</p>
+        <h1>Hype Man: Discipline over Mood</h1>
+        <p class="hero-copy">Train focus with affirmations, strategic quotes, hard life advice, and measurable execution.</p>
+      </header>
+
+      <section class="card" aria-labelledby="session-title">
+        <div class="card-head">
+          <h2 id="session-title">Hype Session</h2>
+          <span class="badge" id="voiceState">Voice ready</span>
+        </div>
+
+        <div class="chip-row" role="group" aria-label="Choose affirmation vibe">
+          <button class="chip chip--active" type="button" data-vibe="focus">Focus</button>
+          <button class="chip" type="button" data-vibe="confidence">Confidence</button>
+          <button class="chip" type="button" data-vibe="energy">Energy</button>
+          <button class="chip" type="button" data-vibe="calm">Calm</button>
+        </div>
+
+        <blockquote id="hypeText" class="hype-line" aria-live="polite">"Discipline is freedom in action."</blockquote>
+
+        <div class="actions">
+          <button id="hypeBtn" class="btn btn--solid" type="button">New affirmation</button>
+          <button id="speakBtn" class="btn btn--ghost" type="button">▶ Speak it</button>
+          <button id="stopBtn" class="btn btn--ghost" type="button">■ Stop</button>
+        </div>
+      </section>
+
+      <section class="grid grid--2">
+        <article class="card" aria-labelledby="quotes-title">
+          <h2 id="quotes-title">Strategic Quotes</h2>
+          <p id="quoteText" class="quote" aria-live="polite">"The supreme art of war is to subdue the enemy without fighting."</p>
+          <p id="quoteAuthor" class="muted">— Sun Tzu</p>
+          <button id="quoteBtn" class="btn btn--ghost" type="button">New quote</button>
+        </article>
+
+        <article class="card" aria-labelledby="advice-title">
+          <h2 id="advice-title">Life Advice Library</h2>
+          <div class="chip-row" role="group" aria-label="Choose advice source">
+            <button class="chip chip--active advice-chip" type="button" data-source="power">48 Laws of Power</button>
+            <button class="chip advice-chip" type="button" data-source="seduction">Art of Seduction</button>
+            <button class="chip advice-chip" type="button" data-source="subtle">Subtle Art</button>
+          </div>
+          <p id="adviceText" class="quote" aria-live="polite">Never outshine the master. Make superiors feel securely superior.</p>
+          <button id="adviceBtn" class="btn btn--ghost" type="button">Next advice</button>
+        </article>
+      </section>
+
+      <section class="grid grid--2">
+        <article class="card" aria-labelledby="goal-title">
+          <h2 id="goal-title">Today’s Mission</h2>
+          <form id="goalForm" class="stack-sm">
+            <label for="goalInput">What must be done today?</label>
+            <input id="goalInput" type="text" maxlength="140" placeholder="Finish proposal, ship feature, train hard..." required />
+            <button class="btn btn--solid" type="submit">Save mission</button>
+          </form>
+          <p id="savedGoal" class="muted">No mission saved yet.</p>
+        </article>
+
+        <article class="card" aria-labelledby="stats-title">
+          <h2 id="stats-title">Momentum Tracker</h2>
+          <div class="stats">
+            <p><strong id="sessionCount">0</strong> hype sessions</p>
+            <p><strong id="streakCount">0</strong> day streak</p>
+          </div>
+          <p class="muted">Consistency compounds. Return daily.</p>
+        </article>
+      </section>
+
+      <section class="grid grid--2">
+        <article class="card" aria-labelledby="exercise-title">
+          <h2 id="exercise-title">Exercise Tracker</h2>
+          <form id="exerciseForm" class="stack-sm">
+            <label for="exerciseInput">Log completed training</label>
+            <input id="exerciseInput" type="text" maxlength="120" placeholder="5km run, 60 pushups, heavy squat..." required />
+            <button class="btn btn--solid" type="submit">Add exercise</button>
+          </form>
+          <ul id="exerciseList" class="entry-list"></ul>
+        </article>
+
+        <article class="card" aria-labelledby="work-title">
+          <h2 id="work-title">Productivity Tracker</h2>
+          <form id="workForm" class="stack-sm">
+            <label for="workInput">Log completed work</label>
+            <input id="workInput" type="text" maxlength="140" placeholder="Closed project milestone, deep work block..." required />
+            <button class="btn btn--solid" type="submit">Add work win</button>
+          </form>
+          <ul id="workList" class="entry-list"></ul>
+        </article>
+      </section>
+
+      <section class="card" aria-labelledby="reward-title">
+        <h2 id="reward-title">Commendation</h2>
+        <p id="rewardText" class="reward" aria-live="polite">Log your wins to unlock your praise.</p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
